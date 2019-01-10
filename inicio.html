@@ -10,9 +10,9 @@
 
     var nome;
 
-    nome = prompt("qual é o seu nome?");
+    nome = prompt("qual é o seu nome? (Para entrar basta digitar 'angelo' ou 'convidado' ");
 
-    if (nome == "angelo") {
+    if (nome == "angelo" || nome == "convidado") {
       alert("Olá, " + nome)
 
       var idade;
@@ -186,30 +186,241 @@
 
           }
 
-          function datas(){
-            
-                var data = document.getElementById("txtData").value;
-                data = data.split("/");
-                if (data[0] <= 31 ){
-                alert("Dia: "+data[0]);
-                }
-                else {
-                  alert("dia invalido")
-                }
-                if (data[1] <= 12) {
-                alert("Mês: "+data[1]);
-                }
-                else {
-                  alert("mês invalido");
-                }
-                if (data[2] < 2019) {
-                alert("Ano: "+data[2]);
-                } 
-                else {
-                  alert("ano invalido");
-                }
+          function datas() {
+
+            var data = document.getElementById("txtData").value;
+            data = data.split("/");
+            if (data[0] <= 31) {
+              alert("Dia: " + data[0]);
             }
-        
+            else {
+              alert("dia invalido")
+            }
+            if (data[1] <= 12) {
+              alert("Mês: " + data[1]);
+            }
+            else {
+              alert("mês invalido");
+            }
+            if (data[2] < 2019) {
+              alert("Ano: " + data[2]);
+            }
+            else {
+              alert("ano invalido");
+            }
+          }
+
+          function soma() {
+            var a = document.getElementById("numero1").value;
+            var b = document.getElementById("numero2").value;
+            var c = document.getElementById("numero3").value;
+
+            var numero1 = parseInt(a);
+            var numero2 = parseInt(b);
+            var numero3 = parseInt(c);
+
+            var soma = (numero1 + numero2 + numero3)
+
+            alert("a soma deu: " + soma)
+          }
+
+          function subtracao() {
+
+            var a = document.getElementById("numero1").value;
+            var b = document.getElementById("numero2").value;
+            var c = document.getElementById("numero3").value;
+
+            var numero1 = parseInt(a);
+            var numero2 = parseInt(b);
+            var numero3 = parseInt(c);
+
+            var subtracao = (numero1 - numero2 - numero3)
+
+            if (subtracao > 0) {
+              alert("a subtracao deu" + subtracao);
+            }
+            else {
+              alert("a subtracao foi menor que zero, tente novamente")
+            }
+          }
+
+          function multiplicacao2() {
+
+            var a = document.getElementById("numero1").value;
+            var b = document.getElementById("numero2").value;
+            var c = document.getElementById("numero3").value;
+
+            var numero1 = parseInt(a);
+            var numero2 = parseInt(b);
+            var numero3 = parseInt(c);
+
+            var multiplicacao = (numero1 * numero2 * numero3)
+            alert("a multiplicacao deu: " + multiplicacao)
+          }
+
+          function divisao() {
+
+            var a = document.getElementById("numero1").value;
+            var b = document.getElementById("numero2").value;
+            var c = document.getElementById("numero3").value;
+
+            var numero1 = parseInt(a);
+            var numero2 = parseInt(b);
+            var numero3 = parseInt(c);
+
+            var divisao = (numero1 / numero2 / numero3)
+
+            if (divisao > 0) {
+              alert("a divisao deu: " + divisao);
+            }
+            else {
+              alert("a divisao foi menor que zero, tente novamente");
+            }
+
+          }
+
+          function graus() {
+            var temperatura = document.getElementById("temperatura").value;
+
+            var temperaturaEmFloat = parseFloat(temperatura);
+
+            emCelsius = ((temperaturaEmFloat - 32) * 5) / 9
+
+            alert("a temperatura em Celsius é: " + emCelsius);
+
+          }
+
+          function jogo() {
+            var saude = document.getElementById("saude").value;
+            var dano = document.getElementById("dano").value;
+
+            var saudeInt = parseInt(saude);
+            var danoInt = parseInt(dano);
+
+            if (danoInt >= saudeInt) {
+              alert("o personagem morreu, dano muito forte!")
+            }
+
+            else {
+              alert("dano franco, o jogo continua!");
+            }
+          }
+
+          function temChave() {
+            var vetor = ["pao", "espada", "chave", "comida", "arco"]
+
+            for (var ind = 0; ind < 5; ind++) {
+              if (vetor[ind] == "chave") {
+                alert("possui chave!")
+                // return true;
+              }
+              else {
+                alert("nao possui chave")
+                // return false;
+              }
+            }
+
+          }
+
+          function limiteDeTela() {
+            var limite = document.getElementById("limite").value;
+
+            var limiteInt = parseInt(limite);
+
+            if (limiteInt > 100) {
+              alert("voce colocou um numero invalido, suporte apenas para numeros de 0 a 100")
+              limiteInt = 50;
+              alert("o limite foi redefinido para um valor suportado " + limiteInt);
+            }
+            else {
+              alert("o limite de tela colocado foi de: " + limiteInt);
+            }
+          }
+
+          function Carta() {
+            var numeros = document.getElementById("numerosDaCarta").value;
+            var naipe = document.getElementById("naipe").value;
+
+            var numerosInt = parseInt(numeros);
+
+            if (naipe == "espadas" || naipe == "paus" || naipe == "copa" || naipe == "ouros") {
+              alert(numerosInt + " " + naipe)
+
+            }
+            else {
+              alert("naipe desconhecido, tente com 'espadas', 'paus', 'copas', 'ouros'")
+            }
+          }
+
+          function Adivinhacao() {
+            alert("pense em um numero de 1 a 10");
+
+            var numeros;
+
+            while (numeros != "s") {
+              numeros = prompt("esse é o numero da sua carta? " + Math.floor(Math.random() * 10))
+              console.log(numeros)
+            }
+
+            if (numeros == "s") {
+              alert("otimo, consegui adivinhar a sua carta ! agora vamos para o tipo dela :)")
+            }
+
+            alert("agora vamos adivinhar o tipo da carta que voce pensou")
+            var resCarta;
+
+            while (resCarta != "s") {
+
+              resCarta = ["copas", "espadas", "ouros", "paus"];
+              resCarta = prompt(resCarta["Esse é o tipo de carta que voce pensou? " + Math.random() < 0.5 ? 0 : 1]);
+              console.log(resCarta)
+            }
+
+            if (resCarta == "s") {
+              alert("otimo, consegui adivinhar o numero e o tipo da carta que voce pensou!")
+            }
+
+          }
+
+          function joKenPo() {
+
+            var jogador1;
+
+            while (jogador1 != "s") {
+              jogador1 = ["pedra", "papel", "tesoura"];
+              jogador1 = prompt(jogador1["escolha o que voce vai querer jogar, Jogador1 " + Math.random() < 0.5 ? 0 : 1]);
+
+              if (jogador1 == "n") {
+                alert("vez do jogador 2")
+                break;
+              }
+            }
+            if (jogador1 == "s") {
+              var jogada1 = jogador1.value;
+              alert("jogador 1 jogou" + jogada1 + "vez do jogador 2");
+            }
+
+            var jogador2;
+
+            while (jogador2 != "s") {
+              opcoes = ["pedra", "papel", "tesoura"];
+              jogador2 = prompt(opcoes["escolha o que voce vai querer jogar, Jogador2 " + Math.random() < 0.5 ? 0 : 1]);
+              console.log(opcoes)
+
+              if (jogador2 == "n") {
+                alert("vez do jogador1")
+                break;
+              }
+
+            }
+
+            if (jogador2 == "s") {
+              alert("jogador2 jogou" + opcoes + "vez do jogador1")
+            }
+
+
+          }
+
         }
         else {
           alert("voce possui cadastro mas é menor de idade, tente novamente")
@@ -232,6 +443,7 @@
 
 <body>
   <h1>Bem vindo</h1>
+
   <button onclick="clique_botao();">clique aqui</button>
 
   <button onclick="clique_maior();">maior numero</button>
@@ -259,9 +471,58 @@
   <button onclick="datas();">datas</button>
 
   </br>
+  </br>
+
+  Numero1: <input type="text" id="numero1">
+
+  Numero2: <input type="text" id="numero2">
+
+  Numero3: <input type="text" id="numero3">
+
+  <button onclick="soma();" id="somando">soma</button>
+
+  <button onclick="subtracao();" id="subtracao">subtrair</button>
+
+  <button onclick="multiplicacao2();" id="multiplicando">multiplicar</button>
+
+  <button onclick="divisao();" id="dividindo">dividir</button>
+
+  </br>
+  </br>
+
+  Temperatura em Farenheit<input type="text" id="temperatura">
+
+  <button onclick="graus();">Temperatura</button>
+
+  Saude <input type="text" id="saude">
+
+  Dano <input type="text" id="dano">
+
+  <button onclick="jogo();">Jogo</button>
+
+  <button onclick="temChave();">chave</button>
+
+  Limite de Tela <input type="text" id="limite">
+
+  <button onclick="limiteDeTela();">Limite</button>
+
+  </br>
+  </br>
+
+  Numero da Carta <input type="text" id="numerosDaCarta">
+
+  Naipe <input type="text" id="naipe">
+
+  <button onclick="Carta();">Exibir carta</button>
+
+  <button onclick="Adivinhacao();">adivinhacao</button>
+
+  <button onclick="joKenPo();">Jo Ken Po</button>
+
+  </br>
+  </br>
 
   <img src="apagada.jpg" alt="Apagada" id="lampada" onclick="lampada();" onmouseenter="temCerteza();" onmouseleave="desistir();">
-
 
 </body>
 
