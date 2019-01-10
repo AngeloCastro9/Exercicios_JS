@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>Aprendizado</title>
+
+    <script type="text/javascript">
+
+        function supresa() {
+            alert("parabens por ter achado essa pagina, voce é demais!")
+        }
+
+        function voltar() {
+            window.location.href = "inicio.html";
+        }
+
+        function lampada() {
+            alert("voce realmente esta com sorte ate achou o botao de sair, adeus!")
+            window.location.href = "inicio.html";
+        }
+
+        function pista() {
+            document.getElementById('titulo').style.color = 'blue';
+            alert("o jeito de sair e o mesmo que voce usou para entrar aqui.")
+        }
+
+
+        const larguraDaTela = window.screen.availWidth;
+        var position = 0;
+        var aumentar = true;
+
+        var animacaoFrame = 0;
+
+        const animacaoUrso = [
+            'https://raw.githubusercontent.com/gabrieldarezzo/helpjs-ravi/master/images/chara-1.png',
+            'https://raw.githubusercontent.com/gabrieldarezzo/helpjs-ravi/master/images/chara-2.png',
+            'https://raw.githubusercontent.com/gabrieldarezzo/helpjs-ravi/master/images/chara-3.png',
+        ];
+
+        setInterval(function () {
+
+            if (position > (larguraDaTela + 200)) {
+                return false;
+            }
+
+            document.getElementById("urso-img").src = animacaoUrso[animacaoFrame];
+
+
+            document.getElementById("urso-img").style = "left: " + position + "px;";
+
+            position += 4;
+
+            animacaoFrame++;
+            if (animacaoFrame > 2) {
+                animacaoFrame = 0;
+            }
+
+
+        }, 200);
+
+    </script>
+
+</head>
+
+<body>
+    <h1 id="titulo">OLA</h1>
+    <img src="acesa.jpg" alt="Apagada" id="lampada" onmouseenter="lampada();">
+    <button onclick="supresa();">sorte</button>
+    <button onclick="pista();">Pista</button>
+
+    <img src="https://raw.githubusercontent.com/gabrieldarezzo/helpjs-ravi/master/images/chara-1.png" alt="" style="display:none;">
+
+    <img src="https://raw.githubusercontent.com/gabrieldarezzo/helpjs-ravi/master/images/chara-2.png" alt="" style="display:none;">
+
+    <img src="https://raw.githubusercontent.com/gabrieldarezzo/helpjs-ravi/master/images/chara-3.png" alt="" style="display:none;">
+
+    <img id="urso-img" alt="Urso Animado" src="https://raw.githubusercontent.com/gabrieldarezzo/helpjs-ravi/master/images/chara-3.png"
+        style="left: 0;">
+
+</body>
+
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta charset="UTF-8" />
+  <title>Aprendizado</title>
+
+  <script type="text/javascript">
+
+    var nome;
+
+    nome = prompt("qual é o seu nome?");
+
+    if (nome == "angelo") {
+      alert("Olá, " + nome)
+
+      var idade;
+
+      idade = prompt("em que ano voce nasceu?");
+      if (idade > 1950) {
+
+        if (idade - 2019 <= 18) {
+          alert("voce é maior de idade")
+
+
+          function clique_botao() {
+            alert("voce clicou no botao, " + nome);
+          }
+
+
+          function clique_maior() {
+            var numero1;
+            var numero2;
+
+            numero1 = prompt("digite o primeiro numero");
+            numero2 = prompt("digite o segundo numero");
+
+            alert("o maior numero é: " + Math.max(numero1, numero2))
+          }
+
+          function data() {
+            var data;
+            data = new Date();
+            alert("a data atual é: " + data)
+          }
+
+          function lampada() {
+            window.location.href = "lampada.html";
+          }
+
+          function temCerteza() {
+            alert("Opa, voce me achou... tem certeza de que vai clicar?")
+          }
+
+          function desistir() {
+            alert("Já sabia que ia desistir de clicar aqui :)")
+          }
+
+          function multiplicacao() {
+            var numero1;
+            var numero2;
+            var soma;
+
+            numero1 = prompt("digite o primeiro numero");
+            numero2 = prompt("digite o segundo numero");
+
+            soma = (numero1 * numero2);
+
+            alert("a soma deu: " + soma);
+
+          }
+
+          function media() {
+
+            x = prompt("digite a primeira nota")
+            y = prompt("digite o segundo nota")
+            z = prompt("digite a terceira nota")
+
+            var nota1 = parseInt(x);
+            var nota2 = parseInt(y);
+            var nota3 = parseInt(z);
+
+            media = (nota1 + nota2 + nota3) / 3
+
+            alert("a media é: " + media)
+          }
+
+          function nomes() {
+            var nome1;
+            var nome2;
+            var nome3;
+            var nome4;
+
+            nome1 = prompt("digite o primeiro nome");
+            nome2 = prompt("digite o segundo nome");
+            nome3 = prompt("digite o terceiro nome");
+            nome4 = prompt("digite o quarto nome");
+
+            alert(nome4 + " ," + nome3 + ", " + nome2 + ", " + nome1);
+          }
+
+          function idade_maior() {
+
+            x = prompt("digite a primeira idade");
+            y = prompt("digite a segunda idade");
+            z = prompt("digite a terceira idade");
+
+            var idade1 = parseInt(x);
+            var idade2 = parseInt(y);
+            var idade3 = parseInt(z);
+            var contador = 0;
+            var maior = 0;
+
+            if (idade1 || idade2 || idade3 < 18) {
+              contador++;
+              console.log(contador)
+              alert("são " + contador + "menores")
+            }
+            if (idade1 || idade2 || idade3 >= 18) {
+              maior++;
+              console.log(maior)
+              alert("são " + maior + "maiores")
+            }
+
+          }
+
+          function altura() {
+
+            x = prompt("digite a primeira altura");
+            y = prompt("digite a segunda altura");
+            z = prompt("digite a terceira altura");
+
+            var altura1 = parseFloat(x);
+            var altura2 = parseFloat(y);
+            var altura3 = parseFloat(z);
+            var alturaDeTodos;
+            if (altura1 || altura2 || altura3 < 1.20) {
+              alert("altura invalida, tente novamente!")
+            }
+            else {
+              alert("a maior altura é: " + Math.max(altura1, altura2, altura3));
+            }
+
+          }
+
+          function genero() {
+
+            var altura = document.getElementById("txtAltura").value;
+            var sexo = document.getElementById("txtSexo").value;
+
+            altura = altura.split(",");
+            sexo = sexo.split(",");
+            var masculino = 0;
+            var feminino = 0;
+            var maiorAltura = parseFloat(altura[0]);
+            var sexoMaiorAltura = sexo[0];
+            if (altura > 1.2) {
+
+              if (sexo == "masculino" || sexo == "feminino") {
+
+                for (i = 0; i < sexo.length; i++) {
+                  if (sexo[i] == "masculino") {
+                    masculino++;
+                  } else if (sexo[i] == "feminino") {
+                    feminino++;
+                  }
+
+                  if (parseFloat(altura[i]) > maiorAltura) {
+                    maiorAltura = parseFloat(altura[i]);
+                    sexoMaiorAltura = sexo[i];
+                  }
+                }
+
+                alert("Masculino: " + masculino + " - Feminino: " + feminino);
+                alert("A maior altura é " + maiorAltura + " e pertence ao sexo " + sexoMaiorAltura);
+              }
+              else {
+                alert("sexo invalido")
+              }
+
+            }
+            else {
+              alert("altura invalida")
+            }
+
+          }
+
+          function datas(){
+            
+                var data = document.getElementById("txtData").value;
+                data = data.split("/");
+                if (data[0] <= 31 ){
+                alert("Dia: "+data[0]);
+                }
+                else {
+                  alert("dia invalido")
+                }
+                if (data[1] <= 12) {
+                alert("Mês: "+data[1]);
+                }
+                else {
+                  alert("mês invalido");
+                }
+                if (data[2] < 2019) {
+                alert("Ano: "+data[2]);
+                } 
+                else {
+                  alert("ano invalido");
+                }
+            }
+        
+        }
+        else {
+          alert("voce possui cadastro mas é menor de idade, tente novamente")
+          window.location.href = "inicio.html";
+        }
+      }
+      else {
+        alert("ano de nascimento invalido, tente novamente")
+        window.location.href = "inicio.html";
+      }
+    }
+    else {
+      alert("voce nao possui cadastro, tente novamente")
+      window.location.href = "inicio.html";
+    }
+
+
+  </script>
+</head>
+
+<body>
+  <h1>Bem vindo</h1>
+  <button onclick="clique_botao();">clique aqui</button>
+
+  <button onclick="clique_maior();">maior numero</button>
+
+  <button onclick="data();">data</button>
+
+  <button onclick="multiplicacao();">multiplicacao</button>
+
+  <button onclick="media();">media</button>
+
+  <button onclick="nomes();">nomes</button>
+
+  <button onclick="idade_maior();">maior idade</button>
+
+  <button onclick="altura();">altura</button>
+
+  Altura <input type="text" id="txtAltura">
+
+  Sexo <input type="text" id="txtSexo">
+
+  <input type="button" value="Verificar" onclick="genero();">
+
+  Datas <input type="text" id="txtData">
+
+  <button onclick="datas();">datas</button>
+
+  </br>
+
+  <img src="apagada.jpg" alt="Apagada" id="lampada" onclick="lampada();" onmouseenter="temCerteza();" onmouseleave="desistir();">
+
+
+</body>
+
+</html>
