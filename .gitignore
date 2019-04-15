@@ -1,3 +1,4 @@
 .vscode/launch.json
 node/funcionarios/node_modules
 node/projeto/node_modules
+ajax/node_modules
